@@ -1,6 +1,6 @@
 # My-LaTeX
 
-This repo includes my LaTeX documents.
+This repo includes my (very small) changes to Calvin Kent's LaTeX files, found at https://github.com/CalvinKent/My-LaTeX.
 
 Description of .sty files.
 
