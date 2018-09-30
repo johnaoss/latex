@@ -1,5 +1,6 @@
-# My-LaTeX
-This repo includes my LaTeX documents.
+# latex
+
+This repo is a fork of Calvin Kent's LaTeX files, from the beginning of September 2018.
 
 Description of .sty files.
 
