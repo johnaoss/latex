@@ -90,14 +90,27 @@
 	\refstepcounter{Qpart}
 }
 
+\NewDocumentEnvironment{solnum}%
+{	O{Solution}}%
+%	 ⤷ text before top blue line
+{	
+	\par\makebox[\linewidth]{
+		\color{blue}\raisebox{-.8ex}[0cm][0.45cm]{\hspace*{-0.27cm} #1.}\hspace{1ex}\hrulefill
+	}
+}
+{	
+	\brule~\\
+	\refstepcounter{Qpart}
+	\setcounter{equation}{0}
+}
 
 % Setup assignment pagestyle
 \fancypagestyle{Assignment}
 {
-	\lhead{Calvin \textsc{Kent} \\ 20743769}
+	\lhead{\StudentFName \textsc{\StudentLName} \\ \StudentNum}
 	\chead{\textbf{\CourseCodeAN}}
 	\rhead{\AssignmentDate}
-	\lfoot{Calvin \textsc{Kent} \\ 20743769}
+	\lfoot{\StudentFName \textsc{\StudentLName} \\ \StudentNum}
 	\cfoot{\textbf{\CourseCodeAN}}
 	\rfoot{Page\ \thepage\ of\ \MaxPage \\ Question \#\theQnum}
 	\renewcommand\headrulewidth{0.1pt}

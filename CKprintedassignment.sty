@@ -27,7 +27,7 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{CKprintedassignment}[2018/05/19 v18.5 LaTeX package for printed assignments]
 % Start: Printed Assignment PREAMBLE ...
-\renewcommand*{\benvVar}{\textbf{Solution}}
+\renewcommand*{\benvVar}{Solution}
 % new question enviornment, just like SNew's
 \newcounter{qnum}
 \newcommand*{\qnumb}{0}
@@ -59,15 +59,6 @@
 }
 {	
 	\newpage
-}
-\NewDocumentEnvironment{qstnPsamepage}%
-{	O{}						O{} 				 O{}	}%
-%	 ⤷ #1  question number 	⤷ #2 question name	 ⤷ #3 question points
-{	
-	{\bfseries{Question #1: #2~#3 }}
-	\\~\\
-}
-{
 }
 \NewDocumentEnvironment{soln}%
 {	O{Solution}}%

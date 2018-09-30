@@ -55,64 +55,37 @@
 \cftsetindents{chapter}{0em}{1em}
 \cftsetindents{section}{1em}{1.9em}
 
-%removes section number from ToC, see more: https://tex.stackexchange.com/questions/218663/remove-section-number-from-table-of-contents
-\renewcommand\numberline[1]{}
-
 %custom theorem style
-%\newtheoremstyle{note}% name
-%{8pt}%      Space above
-%{4pt}%      Space below
-%{}%         Body font
-%{}%         Indent amount (empty = no indent, \parindent = para indent)
-%{\bfseries}% Thm head font
-%{:}%        Punctuation after thm head
-%{.5em}%     Space after thm head: " " = normal interword space;
-%{}%         Thm head spec (can be left empty, meaning `normal')
-
-\declaretheoremstyle[
-spaceabove=8pt, spacebelow=4pt,
-headfont=\normalfont\bfseries,
-headpunct=:,
-notefont=\mdseries, notebraces={(}{)},
-bodyfont=\normalfont,
-postheadspace=.5em
-]{note}
-
-\declaretheoremstyle[
-spaceabove=8pt, spacebelow=4pt,
-headfont=\normalfont\bfseries,
-headpunct=:,
-notefont=\normalfont\bfseries, notebraces={-- }{},
-bodyfont=\normalfont,
-postheadspace=.5em,
-headindent=-.35em
-]{namednote}
-
-\declaretheoremstyle[
-spaceabove=8pt, spacebelow=4pt,
-headfont=\normalfont\bfseries,
-headpunct=:,
-notefont=\normalfont\bfseries, notebraces={}{},
-bodyfont=\normalfont,
-postheadspace=.5em,
-headindent=-.35em
-]{unnamednote}
+\newtheoremstyle{note}% name
+{8pt}%      Space above
+{4pt}%      Space below
+{}%         Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{:}%        Punctuation after thm head
+{.5em}%     Space after thm head: " " = normal interword space;
+{}%         Thm head spec (can be left empty, meaning `normal')
 
 % theorems
-%\newtheorem{defn}[subsection]{Definition} % we use declarethm for thmtools package consistency and we need thmtools to make \autoref work properly
-\declaretheorem[name={Definition},numberwithin=section,style=note]{defn}
-\declaretheorem[name={Notation},numberlike=defn,style=note]{notn}
-\declaretheorem[name={Proposition},numberlike=defn,style=note]{prop}
-\declaretheorem[name={Lemma},numberlike=defn,style=note]{lem}
-\declaretheorem[name={Theorem},numberlike=defn,style=note]{thrm}
-\declaretheorem[name={Corollary},numberlike=defn,style=note]{cor}
-\declaretheorem[name={Remark},numberlike=defn,style=note]{rem}
-\declaretheorem[name={Recall},numberlike=defn,style=note]{rec}
-\declaretheorem[name={Example},numberlike=defn,style=note]{ex}
-\declaretheorem[name={Exercise},numberlike=defn,style=note]{exe}
-%custom theorem name
-\declaretheorem[name={\hspace*{.025em}},numberlike=defn,style=namednote]{topc}
-\declaretheorem[name={},numbered=no,,style=unnamednote]{topc*}
+\newcommand{\newthrm}[1]{
+\theoremstyle{note}
+\newtheorem
+}
+\theoremstyle{note}
+\newtheorem{defn}[subsection]{Definition}
+\newtheorem{thrm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{ex}[defn]{Example}
+\newtheorem{exs}[defn]{Examples}
+\newtheorem{rec}[defn]{Recall}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{fact}[defn]{Fact}
+\newtheorem{notn}[defn]{Notation}
+\newtheorem{rem}[defn]{Remark}
+\newtheorem{rems}[defn]{Remarks}
+\newtheorem{exe}[defn]{Exercise}
+\newtheorem*{aside}{Aside}
 
 % Setup prefack pagestyle
 \fancypagestyle{prefack}

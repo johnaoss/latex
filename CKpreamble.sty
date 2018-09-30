@@ -25,28 +25,25 @@
 % SOFTWARE.
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{CKpreamble}[2018/08/09 v18.8 LaTeX package for preamble]
+\ProvidesPackage{CKpreamble}[2018/06/11 v18.6 LaTeX package for preamble]
 % Start: GENERIC PREAMBLE ...
 %
 %\documentclass[11pt]{article} % Not used in .sty
 \RequirePackage[english]{babel} %
 \RequirePackage[T1]{fontenc} % see more: https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc
 \RequirePackage[utf8]{inputenc} %
-\RequirePackage[boxed]{algorithm2e} % for pseudocode, see more: https://www.sharelatex.com/learn/algorithms
 \RequirePackage{amsmath} % start all equations from left, see also: https://tex.stackexchange.com/questions/119106/using-the-flush-left-align-environment-flalign
-\RequirePackage{stackengine} % https://tex.stackexchange.com/questions/445307/how-can-i-add-extra-space-before-cline-in-a-multicolumn-matrix-cell
 \RequirePackage{amssymb} %
 \RequirePackage{amsthm} % https://en.wikibooks.org/wiki/LaTeX/Theorems
 \RequirePackage{bm} % for matrix name notation, see also: https://tex.stackexchange.com/questions/3238/bm-package-versus-boldsymbol EDIT
 \RequirePackage{cancel} % cancel expression, see also: https://tex.stackexchange.com/questions/47063/rightarrow-vs-implies-and-does-not-imply-symbol 
 \RequirePackage{centernot} % negate operation
-\RequirePackage{commath} % for \norm{}, see more: https://tex.stackexchange.com/questions/43008/absolute-value-symbols
+\RequirePackage{commath} %for \norm{}, see more: https://tex.stackexchange.com/questions/43008/absolute-value-symbols
 \RequirePackage{comment} % for comment blocks
 \RequirePackage{dashrule} % dash rule, see more: https://tex.stackexchange.com/questions/250237/how-to-align-a-dashrule
 \RequirePackage{dsfont} % for representation of number sets, R,Q,Z,N etc., see more: https://tex.stackexchange.com/questions/336659/number-sets-symbols-in-latex
-\RequirePackage{empheq} % for boxing multiple lines, see more: https://tex.stackexchange.com/questions/211698/box-all-equations-of-align-environment-but-not-the-equation-numbers
-\RequirePackage{enumitem} % to make enumurate start from letters or custom bullets, see also: https://tex.stackexchange.com/questions/2291/how-do-i-change-the-enumerate-list-format-to-use-letters-instead-of-the-defaul
-\RequirePackage{etoolbox} % for using commands globally in environments, see more: https://tex.stackexchange.com/questions/138976/change-line-spacing-in-algorithm2e
+\RequirePackage{empheq} %for boxing multiple lines, see more: https://tex.stackexchange.com/questions/211698/box-all-equations-of-align-environment-but-not-the-equation-numbers
+\RequirePackage{enumitem} %to make enumurate start from letters or custom bullets, see also: https://tex.stackexchange.com/questions/2291/how-do-i-change-the-enumerate-list-format-to-use-letters-instead-of-the-defaul
 \RequirePackage[dvipsnames]{xcolor} % for using colors by name, see more: https://www.sharelatex.com/learn/Using_colours_in_LaTeX
 % preventing package clash: https://tex.stackexchange.com/questions/83101/option-clash-for-package-xcolor?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 \RequirePackage{graphicx} % for university logo
@@ -62,19 +59,18 @@
 \RequirePackage{physics} % \dv and \pdv, see more: https://tex.stackexchange.com/questions/225523/how-to-write-partial-differential-equation-ex-dq-dt-ds-dt-with-real-partial-d
 \RequirePackage{scrextend} % to add custom margins to custom text, see more: https://tex.stackexchange.com/questions/588/how-can-i-change-the-margins-for-only-part-of-the-text
 \RequirePackage{setspace} % to add double spacing, see more: https://tex.stackexchange.com/questions/819/double-line-spacing
-\RequirePackage{siunitx} % for SI units, see more: https://tex.stackexchange.com/questions/2248/what-package-should-i-use-to-typeset-units
 \RequirePackage{tabstackengine} % for equal spacing in matrices, see more: https://tex.stackexchange.com/questions/162822/equal-spacing-in-matrix// and https://tex.stackexchange.com/questions/337988/what-does-stackmath-do
 \RequirePackage{tcolorbox} %for prettier boxing, see more: https://tex.stackexchange.com/questions/287438/tcolorbox-without-background-color-transparent
 \RequirePackage{thmtools} % for \declaretheorem, see more: http://mirrors.concertpass.com/tex-archive/macros/latex/exptl/thmtools/thmtools.pdf
 \RequirePackage{titlesec} % for section title spacing, see more: https://tex.stackexchange.com/questions/53338/reducing-spacing-after-headings
-\RequirePackage{tocloft} % for changing fonts of ToC entries, for lectures notes (book class), see more: https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/
+% TBEDIT: :\RequirePackage{tocloft} % for changing fonts of ToC entries, for lectures notes (book class), see more: https://texblog.org/2011/09/09/10-ways-to-customize-tocloflot/
 \RequirePackage{ulem} % for use strikeout (\sout), see also: https://jansoehlke.com/2010/06/strikethrough-in-latex/
 % TBEDIT :\RequirePackage[backend=biber]{biblatex} % Not used in .sty
-% TBEDIT :\addbibresource{MATH145A2ref.bib} % Not used in .sty
 \RequirePackage{xparse} % for environments with multiple arguments, see more: https://tex.stackexchange.com/questions/29973/more-than-one-optional-argument-for-newcommand
 \RequirePackage{fancyhdr} % for fancy page styles; headers
 \RequirePackage{pdfpages} % for inserting PDFs, see also: https://tex.stackexchange.com/questions/5911/how-to-include-pdf-pages-without-a-newpage-before-the-first-page
 \RequirePackage{pgfplots} % for plotting graphs, see also: https://tex.stackexchange.com/questions/58202/drawing-simple-graphs-on-latex
+\pgfplotsset{compat=1.7}
 \RequirePackage{background} % for adding watermark, see also: https://tex.stackexchange.com/questions/19572/does-memoir-class-have-various-page-designs-built-in?rq=1
 \RequirePackage{tikz}
 \RequirePackage{changepage} % for adjusting margins easily, see more: https://ctan.org/pkg/changepage
@@ -90,8 +86,6 @@
 %\numberwithin{equation}{section} %section number equation numbers % Not used in .sty % toggle
 
 % macros
-
-\sisetup{exponent-product = \cdot, output-decimal-marker = {.},number-unit-product = \text{ },per-mode=reciprocal-positive-first}
 
 \newcommand*{\bruleold}{\vspace{2mm}{\color{blue}\hrule height 0.004mm}} % brule with light blue color for enumerated questions
 \newcommand*{\brule}{\vspace{2mm}{\color{blue}\hrule}} % brule with light blue color for finishing solutions and lectures
@@ -130,17 +124,6 @@
 \DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\proj}{proj}
 \DeclareMathOperator{\vspan}{span}
-\DeclareMathOperator{\imag}{im}
-\DeclareMathOperator{\nullity}{nullity}
-\DeclareMathOperator{\charac}{char}
-
-% linear algebra macros
-
-\DeclareMathOperator{\nullspc}{Null}
-\DeclareMathOperator{\colspc}{Col}
-\DeclareMathOperator{\rowspc}{Row}
-\DeclareMathOperator{\rankof}{rank}
-\DeclareMathOperator{\rangeof}{Range}
 
 \newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \;\middle|\;\else\mid\fi\;} % Shorthand for such that in set notation, see more: https://tex.stackexchange.com/questions/45713/creating-a-large-such-that-symbol
 \newcommand*{\N}{\mathds{N}} % Shorthand for Natural Numbers Set
