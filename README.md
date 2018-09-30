@@ -1,6 +1,6 @@
 # latex
 
-This repo includes my (very small) changes to Calvin Kent's LaTeX files, found at https://github.com/CalvinKent/My-LaTeX.
+This repo includes my (very small) changes to Calvin Kent's LaTeX files.
 
 Description of .sty files.
 
@@ -17,6 +17,6 @@ Description of .tex files.
 
 ## Copyright
 
-This project is a direct fork of [Calvin Kent's LaTeX](fileshttps://github.com/CalvinKent/My-LaTeX).
+This project is a direct fork of [Calvin Kent's LaTeX files](https://github.com/CalvinKent/My-LaTeX).
 
-More information can be found in [LICENSE.md](./LICENSE.md)
+More information can be found in [LICENSE.md](https://github.com/johnaoss/latex/blob/master/LICENSE).
