@@ -34,13 +34,11 @@
 
 % fontspec does not work under pdflatex or latex
 \ifPDFTeX
-\PackageError{JAOcode}{dependancy fontspec requires LuaTeX or XeTeX}{please use one of those compilers}
-\else
+\PackageError{JAOcode}{dependency fontspec requires LuaTeX or XeTeX}{please use one of those compilers}
 \fi
 
-\setmonofont[
-  Contextuals={Alternate}
-]{Fira Code}
+% requires Fira Code to be installed already
+\newfontfamily\firacode{Fira Code}
 
 % Listings Configuration
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -53,7 +51,7 @@
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
-    basicstyle=\footnotesize\ttfamily,
+    basicstyle=\footnotesize\firacode,
     breakatwhitespace=false,         
     breaklines=true,                 
     captionpos=b,                    
@@ -67,6 +65,7 @@
 }
 \lstset{style=mystyle}
 
+
 % for code blocks
 \NewDocumentEnvironment{codeblock}%
 {}
@@ -78,4 +77,4 @@
 }
 
 % for inline code (monospace)
-\newcommand{\code}{\texttt}
+\newcommand{\code}[1]{{\footnotesize\firacode #1}}
