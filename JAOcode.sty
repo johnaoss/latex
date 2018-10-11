@@ -1,0 +1,81 @@
+% Prepared by John Oss
+%
+% JAOcode: Package for my code formatting stuff
+% 
+% MIT License
+%
+% Copyright (c) 2018 John Oss
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+% 
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{JAOcode}[2018/10/11 v0.1 LaTeX package for personal code formatting]
+
+\RequirePackage{fontspec}
+\RequirePackage{listings}
+\RequirePackage{iftex}
+
+% fontspec does not work under pdflatex or latex
+\ifPDFTeX
+\PackageError{JAOcode}{dependancy fontspec requires LuaTeX or XeTeX}{please use one of those compilers}
+\else
+\fi
+
+\setmonofont[
+  Contextuals={Alternate}
+]{Fira Code}
+
+% Listings Configuration
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% for code blocks
+\NewDocumentEnvironment{codeblock}%
+{}
+{
+    \begin{lstlisting}
+}
+{
+    \end{lstlisting}
+}
+
+% for inline code (monospace)
+\newcommand{\code}{\texttt}
