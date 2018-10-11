@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# for macos only
+# for macos only with MacTeX installed.
 rsync *.sty ~/Library/texmf/tex/latex/
