@@ -4,6 +4,7 @@
 % 
 % MIT License
 %
+% Copyright (c) 2018 John Oss
 % Copyright (c) 2018 Calvin Kent
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,26 +35,16 @@
 \newcommand*{\CourseName}{Mathematics Course} % Full course name
 \newcommand*{\LDate}{00 MONTH 201x} % Lecture date
 \newcommand*{\ProfName}{ProfFName ProfLName} % Prof Name
-\newcommand*{\COlink}{http://www.student.math.uwaterloo.ca/~c2kent/} % Course outline link
+\newcommand*{\COlink}{http://www.student.math.uwaterloo.ca} % Course outline link
+\newcommand*{\YourName}{FirstName LastName} % Your name
+\newcommand*{\YourSite}{https://example.com} % Personal Website
+\newcommand*{\YourEmail}{person(at)uwaterloo(dot)ca} % Personal E-mail
 \newcounter{lecnum} % Lecture number
 \newcounter{chapnum}
 
 %changing the section numbering
 \renewcommand\thesection{\arabic{section}}
 
-%changing fonts of ToC entries:
-\renewcommand{\cfttoctitlefont}{\bfseries\huge}
-\renewcommand{\cftchapfont}{\large\bfseries\scshape}
-\renewcommand{\cftsecfont}{\bfseries}
-
-%setting lengths, see more: https://tex.stackexchange.com/questions/64229/how-to-change-font-size-in-table-of-contents// and https://tex.stackexchange.com/questions/123952/increasing-spacing-between-section-number-and-title-in-the-table-of-contents// and http://ctan.math.ca/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
-\setlength{\cftbeforetoctitleskip}{2.5em}
-\setlength{\cftaftertoctitleskip}{-0.5em}
-\renewcommand\cftchapafterpnum{\par\addvspace{4pt}}
-\renewcommand\cftsecafterpnum{\par\addvspace{3pt}}
-\renewcommand\cftsubsecafterpnum{\par\addvspace{1pt}}
-\cftsetindents{chapter}{0em}{1em}
-\cftsetindents{section}{1em}{1.9em}
 
 %custom theorem style
 \newtheoremstyle{note}% name
@@ -145,8 +136,8 @@
 		\end{center}
 		\begin{minipage}{0.5\textwidth}
 			\begin{flushleft}
-			\underline{Prepared by:} \textsc{Calvin KENT} \\
-			\color{blue}\small{\url{www.student.math.uwaterloo.ca/~c2kent/}}
+			\underline{Prepared by:} \textsc{\YourName} \\
+			\color{blue}\small{\url{\YourSite}}
 			\end{flushleft}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
@@ -199,7 +190,7 @@
 
 \newcommand{\CKpreface}{
 This PDF document includes lecture notes for \href{\COlink}{{\CourseCode} - {\CourseName} taught by {\ProfName} in \Term}.\\~\\
-For any questions e-mail me at \texttt{c2kent(at)uwaterloo(dot)ca}.
+For any questions e-mail me at \texttt{\YourEmail}.
 }
 %setting ToC title to empty string
 \addto\captionsenglish{% Replace "english" with the language you use

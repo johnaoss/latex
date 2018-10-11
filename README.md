@@ -20,3 +20,5 @@ Description of .tex files.
 This project is a direct fork of [Calvin Kent's LaTeX files](https://github.com/CalvinKent/My-LaTeX).
 
 More information can be found in [LICENSE.md](https://github.com/johnaoss/latex/blob/master/LICENSE).
+
+The University of Waterloo logo `mlogo.png` is taken from [University of Waterloo's Official Branding Page](https://uwaterloo.ca/brand/visual-expression/logos-and-marks/official-logos), and used **ONLY** for non-commercial, personal academic use.
