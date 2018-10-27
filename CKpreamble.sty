@@ -30,7 +30,6 @@
 %
 \RequirePackage[english]{babel} %
 \RequirePackage[T1]{fontenc} % see more: https://tex.stackexchange.com/questions/44694/fontenc-vs-inputenc
-\RequirePackage[utf8]{inputenc} % todo: check for compiler, then remove if not needed
 \RequirePackage{amsmath} % start all equations from left, see also: https://tex.stackexchange.com/questions/119106/using-the-flush-left-align-environment-flalign
 \RequirePackage{amssymb} %
 \RequirePackage{amsthm} % https://en.wikibooks.org/wiki/LaTeX/Theorems
@@ -75,6 +74,13 @@
 \RequirePackage{changepage} % for adjusting margins easily, see more: https://ctan.org/pkg/changepage
 \RequirePackage{hyperref} % for PDF bookmarks
 \RequirePackage[margin = 1in]{geometry} % For custom margins : [margin = 1in]
+
+\RequirePackage{iftex} % To ignore inputenc warning on LuaTeX/XeTeX
+\ifPDFTeX
+	\RequirePackage[utf8{inputenc}
+\fi
+
+
 
 % reformat left and right brackets, see more: https://tex.stackexchange.com/questions/2607/spacing-around-left-and-right/64960
 \let\originalleft\left
