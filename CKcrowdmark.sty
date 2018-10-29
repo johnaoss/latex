@@ -56,8 +56,9 @@
 {	
 	{	\refstepcounter{Qnum}
 		\bfseries{Question #1: #2\textcolor{qcolor}{(#3 points)}}
+
+		% Double line space, prevents underfull hbox error.
 	}
-	\\~\\
 }
 {	
 	\setcounter{Qpart}{1}
