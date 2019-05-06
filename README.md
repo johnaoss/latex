@@ -8,6 +8,7 @@ Description of .sty files.
 - CKlecture: For lectures.
 - CKpreamble: Preamble for every document.
 - CKprintedassignment: For printed assignments.
+- JAOCode: For code formatting using the FiraCode typeface.
 
 Description of .tex files.
 
@@ -15,9 +16,17 @@ Description of .tex files.
 - Lecture: Template for lectures.
 - PrintedAssignment: Template for printed assignments.
 
+Description of .pdf files.
+
+- Crowdmark: An example of the crowdmark assignment template, without any user-added content.
+
+## Usage
+
+All of these .sty files have been able to be compiled with the latest version of pdflatex, with the exception of `JAOCode.sty`. Due to how the older editions of LaTeX handle fonts, it is most likely that LuaTex or XeTex will be needed. `JAOCode.sty` has been tested with LuaTeX and found to compile fine on a macOS system.
+
 ## Copyright
 
-This project is a direct fork of [Calvin Kent's LaTeX files](https://github.com/CalvinKent/My-LaTeX).
+The majority of this project is a direct fork of [Calvin Kent's LaTeX files](https://github.com/CalvinKent/My-LaTeX). Every file who's name begins with a "CK" is either a direct mirror, or small changes to his files.
 
 More information can be found in [LICENSE.md](https://github.com/johnaoss/latex/blob/master/LICENSE).
 
